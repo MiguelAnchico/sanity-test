@@ -15,5 +15,12 @@ export default defineType({
       title: 'Description',
       type: 'text',
     }),
+    defineField({
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      description: 'Define the order of the category as it should appear in lists',
+      validation: (Rule) => Rule.required().integer().positive(),
+    }),
   ],
 })

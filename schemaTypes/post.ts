@@ -7,7 +7,7 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Titulo',
       type: 'string',
     }),
     defineField({
@@ -20,14 +20,13 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      name: 'description',
+      title: 'Descripción',
+      type: 'string',
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Imagen de portada',
       type: 'image',
       options: {
         hotspot: true,
@@ -35,19 +34,31 @@ export default defineType({
     }),
     defineField({
       name: 'categories',
-      title: 'Categories',
+      title: 'Categorias',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
     }),
     defineField({
+      name: 'timeReading',
+      title: 'Tiempo de lectura (Minutos)',
+      type: 'number',
+    }),
+    defineField({
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Fecha de publicación',
       type: 'datetime',
     }),
     defineField({
       name: 'body',
-      title: 'Body',
+      title: 'Contenido',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'views',
+      title: 'Vistas',
+      type: 'number',
+      description: 'Numero de vistas del post',
+      readOnly: true,
     }),
   ],
 
