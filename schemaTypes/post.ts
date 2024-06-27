@@ -49,9 +49,15 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'recommended',
+      title: 'Destacado',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'body',
       title: 'Contenido',
       type: 'blockContent',
+      initialValue: false,
     }),
     defineField({
       name: 'views',
